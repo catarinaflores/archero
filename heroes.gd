@@ -26,11 +26,13 @@ func animate_level() -> void:
 		from(0.0)
 
 func animate_char_name() -> void:
-	name_char.visible_ratio = 0.0
-	var name_tween = create_tween().set_ease(Tween.EASE_IN_OUT). \
-		set_trans(Tween.TRANS_LINEAR)
-	name_tween.tween_property(name_char, "visible_ratio", 1.0, 1.0).from(0.0). \
-		set_delay(0.5)
+	var tween_char = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	var name_final_pos := name_char.position.x
+	name_char.modulate.a = 0.0
+	tween_char.tween_property(name_char, "position:x", name_final_pos, 0.6). \
+		from(name_final_pos - get_viewport_rect().size.x)
+	tween_char.parallel().tween_property(name_char, "self_modulate:a", 1.0, 0.5)
+	tween_char.tween_property(name_char, "modulate", Color.WHITE, 0.4).from(Color.TRANSPARENT)
 
 func animate_skill() -> void:
 	skill.visible_ratio = 0.0
