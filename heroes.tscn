@@ -1,19 +1,18 @@
-[gd_scene load_steps=38 format=3 uid="uid://blpfqe68bndkj"]
+[gd_scene load_steps=39 format=3 uid="uid://blpfqe68bndkj"]
 
 [ext_resource type="Texture2D" uid="uid://cwfo1i34oane0" path="res://assets/images/bg.jpg" id="1_16rj4"]
 [ext_resource type="Script" path="res://heroes.gd" id="1_g015t"]
 [ext_resource type="Texture2D" uid="uid://crylcywjbohs0" path="res://assets/images/icons/star.png" id="2_4cwfy"]
 [ext_resource type="Texture2D" uid="uid://dnn0u355nhwmn" path="res://assets/images/icons/level.png" id="2_7fu5c"]
-[ext_resource type="Texture2D" path="res://assets/images/icons/full-quality/coin.png" id="2_7rda8"]
-[ext_resource type="Texture2D" uid="uid://bnwg8gjnjuyab" path="res://assets/images/icons/bolt.png" id="3_mfwcg"]
+[ext_resource type="Texture2D" uid="uid://d12mg68py4m6v" path="res://assets/images/icons/bolt.png" id="3_mfwcg"]
 [ext_resource type="Texture2D" uid="uid://bmxey7y2wfotu" path="res://assets/images/icons/original-7c3a145ab09f69135ef012fa40392a80.png" id="5_7put7"]
-[ext_resource type="Texture2D" uid="uid://jhjxp8i7vr7t" path="res://assets/images/icons/char.png" id="6_yhih3"]
+[ext_resource type="Texture2D" uid="uid://xlf3x624hop2" path="res://assets/images/icons/char.png" id="6_yhih3"]
 [ext_resource type="Texture2D" uid="uid://3pp2l06pxd1s" path="res://assets/images/icons/info.png" id="7_gx2he"]
 [ext_resource type="Texture2D" uid="uid://bl4idwve4xc36" path="res://assets/images/icons/sword.png" id="8_jlxfx"]
 [ext_resource type="Texture2D" uid="uid://dop0ux062r1js" path="res://assets/images/icons/heart.png" id="9_3fjoe"]
 [ext_resource type="Texture2D" uid="uid://x6sy06ixvobj" path="res://assets/images/icons/power.png" id="10_3d3o0"]
 [ext_resource type="Texture2D" uid="uid://bdyf0uw6by413" path="res://assets/images/icons/select_button.png" id="11_1x37k"]
-[ext_resource type="Texture2D" uid="uid://dje2qj07jdnpc" path="res://assets/images/icons/choice1.png" id="11_mawte"]
+[ext_resource type="Texture2D" uid="uid://dsuw310rxygy5" path="res://assets/images/icons/choice1.png" id="11_mawte"]
 [ext_resource type="Texture2D" uid="uid://ceoe800an2v4r" path="res://assets/images/icons/left_arrow.png" id="12_02ofx"]
 [ext_resource type="Texture2D" uid="uid://w4r53q5ahg08" path="res://assets/images/icons/choice2.png" id="12_5ob84"]
 [ext_resource type="Texture2D" uid="uid://b7vtfff34lcpf" path="res://assets/images/icons/Upgrade_Button.png" id="12_qv7xe"]
@@ -104,12 +103,18 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7rey"]
+bg_color = Color(0.0196078, 0.305882, 0.631373, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aaba"]
 bg_color = Color(0.269531, 0.8125, 0.0898438, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awc2n"]
+bg_color = Color(0.117647, 0.384314, 0.0352941, 1)
 
 [sub_resource type="Gradient" id="Gradient_ggmwx"]
 colors = PackedColorArray(0.146378, 0.455419, 0.857543, 1, 0.0296349, 0.165185, 0.40289, 1)
@@ -337,7 +342,6 @@ offset_top = -4.0
 offset_right = 19.0
 offset_bottom = 4.0
 grow_vertical = 2
-texture = ExtResource("2_7rda8")
 expand_mode = 2
 
 [node name="Gems" type="Panel" parent="Screen/VBoxContainer/TopBar"]
@@ -727,12 +731,14 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_3oa4q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p7rey")
 icon = ExtResource("11_1x37k")
 
 [node name="Upgrade" type="Button" parent="Screen/VBoxContainer/ChoiceButtons"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_7aaba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_awc2n")
 icon = ExtResource("12_qv7xe")
 
 [node name="HSeparator3" type="HSeparator" parent="Screen/VBoxContainer"]
@@ -749,7 +755,6 @@ theme_override_constants/h_separation = 10
 columns = 3
 
 [node name="Char1" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -766,7 +771,6 @@ texture = ExtResource("11_mawte")
 expand_mode = 3
 
 [node name="Char2" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -783,7 +787,6 @@ texture = ExtResource("12_5ob84")
 expand_mode = 3
 
 [node name="Char3" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -800,7 +803,6 @@ texture = ExtResource("13_0eesd")
 expand_mode = 3
 
 [node name="Char4" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -817,7 +819,6 @@ texture = ExtResource("14_aspov")
 expand_mode = 3
 
 [node name="Char5" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -834,7 +835,6 @@ texture = ExtResource("15_nma80")
 expand_mode = 3
 
 [node name="Char6" type="Button" parent="Screen/VBoxContainer/Characters"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
