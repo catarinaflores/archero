@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+* {
+    transition: 0.3s;
+}
+
+body {
+    background-color: rgb(5, 7, 8);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.89)), url('../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+}
+
+canvas {
+    border-radius: 5px;
+}
+
+.i-preloader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #131313;
+    animation-name: preloaderAnimation2;
+    animation-duration: 3s;
+    opacity: 0;
+}
+
+.img-preloader {
+    animation-name: preloaderAnimation;
+    animation-duration: 3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+@keyframes preloaderAnimation {
+    0% {
+        opacity: 0.1;
+        height: 70px;
+    }
+    20% {
+        opacity: 1;
+        height: 70px;
+    }
+    40% {
+        opacity: 0.1;
+        height: 70px;
+    }
+    80% {
+        opacity: 1;
+        height: 70px;
+    }
+    90% {
+        opacity: 1;
+        height: 90px;
+    }
+    100% {
+        opacity: 0.1;
+        height: 0px;
+    }
+}
+
+@keyframes preloaderAnimation2 {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.card {
+    background-color: #000000; 
+    border: 2px solid rgb(31, 31, 31);
+    border-radius: 15px;
+}
+
+#intro {
+    min-height: 100vh;
+    min-height: 100%;
+}
+
+.shadow-danger {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(255, 0, 0, 0.4);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(255, 0, 0, 0.4);
+    box-shadow: 0px 0px 35px 0px rgba(255, 0, 0, 0.4);
+}
+
+#instrucciones {
+    max-width: 400px;
+}
+
+.instrucciones {
+    opacity: 0.5;
+}
+
+#mainGame {
+    display: none;
+}
+
+#GameBoard{
+    width: 400px;
+    height: 700px;
+    position: relative;
+    background-color: #2762b6;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+#startGame {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.resumeBtn{
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#pauseGame {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+#restartGame {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.hero-img{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#canvasBoard{
+    display: none;
+}
+
+.boardScreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.opacity-img {
+    opacity: 0.55;
+}
+
+.backgroundSelectBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.img-fluid {
+    cursor: pointer;
+}
+
+.game-btn {
+    cursor: pointer;
+    height: 70px;
+}
+
+.game-btn:hover {
+    transform: scale(0.95);
+}
+
+.game-advantage {
+    height: 85px;
+    margin-right: 1rem;
+}
+
+.game-btn-animation:hover {
+    transform: scale(0.95);
+}
+
+.noStyle {
+    text-decoration: none;
+}
+
+.noStyle:hover {
+    text-decoration: none;
+}
+
+.level-to-show {
+    position: absolute;
+    left: 50%;
+    top: 51%;
+    transform: translate(-50%,-50%);
+}
+
+.level-to-show-lose {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%,-50%); 
+}
+
+.modal-body {
+    background-color: rgb(5, 7, 8);
+    border: 1px solid rgb(39, 39, 39);
+}
+
+.displayBoard {
+    display: block;
+}
+
+.form-control {
+    background-color: #000000;
+    border-color: #2e2e2e;
+    color: #fff;
+}
+
+.form-control:focus {
+    background-color: #1A1A1A;
+    border-color: #2e2e2e;
+    color: #fff;
+}
+
+.text-custom-light {
+    color: rgb(190, 190, 190);
+}
