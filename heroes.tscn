@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://blpfqe68bndkj"]
+[gd_scene load_steps=48 format=3 uid="uid://blpfqe68bndkj"]
 
 [ext_resource type="Texture2D" uid="uid://cwfo1i34oane0" path="res://assets/images/bg.jpg" id="1_16rj4"]
 [ext_resource type="Script" path="res://heroes.gd" id="1_g015t"]
@@ -6,18 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://dnn0u355nhwmn" path="res://assets/images/icons/level.png" id="2_7fu5c"]
 [ext_resource type="Texture2D" uid="uid://d12mg68py4m6v" path="res://assets/images/icons/bolt.png" id="3_mfwcg"]
 [ext_resource type="Texture2D" uid="uid://bmxey7y2wfotu" path="res://assets/images/icons/original-7c3a145ab09f69135ef012fa40392a80.png" id="5_7put7"]
+[ext_resource type="Shader" uid="uid://ncthcvr1a01y" path="res://shaders/bolt.tres" id="5_cukv5"]
+[ext_resource type="Texture2D" uid="uid://vq8c0q54vf0f" path="res://assets/images/icons/coin.png" id="6_m20ed"]
 [ext_resource type="Texture2D" uid="uid://xlf3x624hop2" path="res://assets/images/icons/char.png" id="6_yhih3"]
 [ext_resource type="Texture2D" uid="uid://3pp2l06pxd1s" path="res://assets/images/icons/info.png" id="7_gx2he"]
 [ext_resource type="Texture2D" uid="uid://bl4idwve4xc36" path="res://assets/images/icons/sword.png" id="8_jlxfx"]
 [ext_resource type="Texture2D" uid="uid://dop0ux062r1js" path="res://assets/images/icons/heart.png" id="9_3fjoe"]
+[ext_resource type="Shader" path="res://shaders/cat.gdshader" id="9_6cdkt"]
 [ext_resource type="Texture2D" uid="uid://x6sy06ixvobj" path="res://assets/images/icons/power.png" id="10_3d3o0"]
 [ext_resource type="Texture2D" uid="uid://bdyf0uw6by413" path="res://assets/images/icons/select_button.png" id="11_1x37k"]
+[ext_resource type="Shader" path="res://shaders/sword.gdshader" id="11_6e33k"]
 [ext_resource type="Texture2D" uid="uid://dsuw310rxygy5" path="res://assets/images/icons/choice1.png" id="11_mawte"]
 [ext_resource type="Texture2D" uid="uid://ceoe800an2v4r" path="res://assets/images/icons/left_arrow.png" id="12_02ofx"]
 [ext_resource type="Texture2D" uid="uid://w4r53q5ahg08" path="res://assets/images/icons/choice2.png" id="12_5ob84"]
 [ext_resource type="Texture2D" uid="uid://b7vtfff34lcpf" path="res://assets/images/icons/Upgrade_Button.png" id="12_qv7xe"]
 [ext_resource type="Texture2D" uid="uid://sdaqbmx1fssx" path="res://assets/images/icons/choice3.png" id="13_0eesd"]
 [ext_resource type="Texture2D" uid="uid://c7jj20fjeopne" path="res://assets/images/icons/choice4.png" id="14_aspov"]
+[ext_resource type="Shader" path="res://shaders/heart.gdshader" id="14_ji01l"]
 [ext_resource type="Texture2D" uid="uid://dhjwrb5yu1sx8" path="res://assets/images/icons/choice5.png" id="15_nma80"]
 [ext_resource type="Texture2D" uid="uid://dhyfyopk3hanu" path="res://assets/images/icons/choice6.png" id="16_jpqad"]
 
@@ -43,17 +48,15 @@ point_count = 3
 curve = SubResource("Curve_n38ff")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xptf3"]
+particle_flag_disable_z = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 70.0
 emission_ring_inner_radius = 30.0
-particle_flag_disable_z = true
+angle_max = 360.0
 angular_velocity_min = 40.0
 angular_velocity_max = 50.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-angle_max = 360.0
 scale_min = 0.01
 scale_max = 0.2
 scale_curve = SubResource("CurveTexture_mwir0")
@@ -81,6 +84,17 @@ bg_color = Color(0.32549, 0.698039, 0.254902, 1)
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yd8ph"]
+shader = ExtResource("5_cukv5")
+shader_parameter/Speed = 5.0
+shader_parameter/Sway = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciwv3"]
+shader = ExtResource("9_6cdkt")
+shader_parameter/strength = 0.3
+shader_parameter/speed = 0.5
+shader_parameter/angle = 0.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfea8"]
 bg_color = Color(0.0235294, 0.0235294, 0.0196078, 0.552941)
 corner_radius_top_left = 4
@@ -95,6 +109,17 @@ corner_radius_bottom_right = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dh5a"]
 bg_color = Color(0.0666667, 0.0745098, 0.160784, 0.435294)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uux6h"]
+shader = ExtResource("11_6e33k")
+shader_parameter/sway = 5.0
+shader_parameter/speed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8snpd"]
+shader = ExtResource("14_ji01l")
+shader_parameter/sway = 5.0
+shader_parameter/speed = 5.0
+shader_parameter/sway2 = -5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oa4q"]
 bg_color = Color(0.273438, 0.582031, 0.992188, 1)
@@ -296,13 +321,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="bolt" type="TextureRect" parent="Screen/VBoxContainer/TopBar/Energy"]
+material = SubResource("ShaderMaterial_yd8ph")
 layout_mode = 2
-anchor_right = 0.047
-offset_left = -7.0
-offset_top = -4.0
-offset_right = 12.992
-offset_bottom = 23.0
+anchor_left = -0.092
+anchor_top = -0.267
+anchor_right = 0.218
+anchor_bottom = 1.533
+offset_left = -0.00799942
+offset_top = 0.00500011
+offset_right = -0.00400162
+offset_bottom = 0.00499916
 grow_vertical = 2
+pivot_offset = Vector2(12, 13)
 texture = ExtResource("3_mfwcg")
 expand_mode = 1
 stretch_mode = 5
@@ -342,6 +372,7 @@ offset_top = -4.0
 offset_right = 19.0
 offset_bottom = 4.0
 grow_vertical = 2
+texture = ExtResource("6_m20ed")
 expand_mode = 2
 
 [node name="Gems" type="Panel" parent="Screen/VBoxContainer/TopBar"]
@@ -394,6 +425,7 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="MeowgikImage" type="TextureRect" parent="Screen/VBoxContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_ciwv3")
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -511,6 +543,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0dh5a")
 
 [node name="Sword" type="TextureRect" parent="Screen/VBoxContainer/HBoxContainer/VBoxContainer/ATK"]
+material = SubResource("ShaderMaterial_uux6h")
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -602,6 +635,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0dh5a")
 
 [node name="Heart" type="TextureRect" parent="Screen/VBoxContainer/HBoxContainer/VBoxContainer/HP"]
+material = SubResource("ShaderMaterial_8snpd")
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
