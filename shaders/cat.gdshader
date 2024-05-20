@@ -4,6 +4,8 @@ uniform float strength: hint_range(0., 1.) = 0.3;
 uniform float speed: hint_range(0., 10.) = 0.5;
 uniform float angle: hint_range(0., 360.) = 0.;
 
+
+// option 1
 void fragment() {
 	float hue = UV.x * cos(radians(angle)) - UV.y * sin(radians(angle));
 	hue = fract(hue + fract(TIME  * speed));
@@ -28,13 +30,15 @@ void fragment() {
 
 // uniform vec3 cat_color: source_color;
 
+
+// option 2
 // void fragment() {
 	// float b = step(1.19, length(COLOR.rgb * vec3(1, 1, 0)));
 	// COLOR.rgb = b * COLOR.rgb + (1.0 - b) * COLOR.b * cat_color;
 // }
 
 
-
+// option 3
 // void fragment() {
 	// vec3 color_without_blue = COLOR.rgb * vec3(1, 1, 0);
 	// float amount_of_red_and_green = length(color_without_blue);

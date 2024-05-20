@@ -118,8 +118,8 @@ shader_parameter/speed = 5.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8snpd"]
 shader = ExtResource("14_ji01l")
 shader_parameter/sway = 5.0
-shader_parameter/speed = 5.0
 shader_parameter/sway2 = -5.0
+shader_parameter/speed = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oa4q"]
 bg_color = Color(0.273438, 0.582031, 0.992188, 1)
